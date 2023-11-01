@@ -18,7 +18,6 @@ interface Props extends ComponentProps<"div"> {
 }
 
 const TokenItem = ({ token, selected, ...props }: Props) => {
-  console.log(token)
   return (
     <Container selected={selected} {...props}>
       <CheckBox selected={selected}>

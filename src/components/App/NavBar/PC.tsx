@@ -17,7 +17,7 @@ import { networkState } from "@/recoils/networkState"
 import MetaWallet from "./MetaWallet"
 import { metaState } from "@/recoils/metamask"
 
-const MENUS = ["Investment"]
+const MENUS = ["Investment", "STO", "My Asset", "Create Pool", "Swap"]
 
 /**
  * PC 네비게이션 바
@@ -73,8 +73,13 @@ const PC = () => {
         <MenuList>
           {MENUS.map((menu, idx) => (
             <Menu
-              clicked={router.pathname.slice(5) === menu.toLowerCase()}
-              onClick={() => router.push(`/app/${menu.toLowerCase()}`)}
+              clicked={
+                router.pathname.slice(5) ===
+                menu.replace(/\s+/g, "").toLowerCase()
+              }
+              onClick={() =>
+                router.push(`/app/${menu.replace(/\s+/g, "").toLowerCase()}`)
+              }
               key={menu}
             >
               {menu}

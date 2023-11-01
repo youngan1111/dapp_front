@@ -18,7 +18,6 @@ const TokenBox = ({ tokens, choices, setChoices }: Props) => {
     } else setChoices((prev) => [...prev, tID])
   }
 
-  console.log("hello", tokens)
   return (
     <Container>
       {tokens.map((token) => (
